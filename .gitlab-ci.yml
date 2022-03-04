@@ -27,7 +27,8 @@ publish:
   script:
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     - echo $NPM_TOKEN
+    - echo $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - npm profile get
-    - npm publish
+  #  - npm publish
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
