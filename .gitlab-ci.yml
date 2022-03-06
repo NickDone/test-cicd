@@ -5,8 +5,6 @@ publish:
   stage: release
   script:
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-    - echo $NPM_TOKEN
-    - echo $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - npm profile get
     - echo ready to publish package to npm registry
   #  - npm publish #1
