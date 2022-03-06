@@ -8,7 +8,7 @@ publish:
     - echo $NPM_TOKEN
     - echo $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - npm profile get
-    - echo so cool
+    - echo ready to publish package to npm registry
   #  - npm publish #1
   only:
     - web
