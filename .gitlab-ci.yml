@@ -9,7 +9,7 @@ publish:
     - echo $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - npm profile get
     - echo so cool
-  #  - npm publish # run publish
+  #  - npm publish
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
     - if: '$CI_PIPELINE_SOURCE == "web"'
