@@ -11,7 +11,7 @@ publish:
     - echo so cool
   #  - npm publish
   only:
-    -  web
+    - web
     - master
   when: manual
     
