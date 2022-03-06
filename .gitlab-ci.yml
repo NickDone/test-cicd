@@ -1,15 +1,26 @@
 stages:
-  - release
+  - release-npm
+  - release-github
 
-publish:
-  stage: release
+release-npm:
+  stage: release-npm
   script:
+    - echo publish to npm
     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     - npm profile get
-    - echo ready to publish package to npm registry
-  #  - npm publish #1
+  #  - npm publish
   only:
-    - web
-    - master
-  when: manual
-    
+    - web # only autorun when click “RunPipeLine” on GitLab WebSite
+  when: 
+      manual
+  allow_failure: false
+
+release-github:
+  stage: release-github
+  script:
+    - echo push to github
+  only:
+    - web # only autorun when click “RunPipeLine” on GitLab WebSite
+  when: 
+      manual
+  allow_failure: false
