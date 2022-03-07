@@ -22,7 +22,7 @@ release-github:
     - ls
     - git branch
     - git checkout main
-    - git reset --hard origin
+    - git reset --hard
     - cat index.js
     - git push -f https://${GITHUB_TOKEN}@github.com/NickDone/test-cicd.git main
   only:
