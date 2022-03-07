@@ -1,1 +1,1 @@
-export default 'hello world, i like it.'
+export default 'hello world, i like it. but now not.'
