@@ -19,6 +19,7 @@ release-github:
   stage: release-github
   script:
     - echo $GITHUB_TOKEN
+    - git checkout main
     - git branch
     - git push --set-upstream https://${GITHUB_TOKEN}@github.com/NickDone/test-cicd.git main
   only:
