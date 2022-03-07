@@ -1,17 +1,26 @@
 stages:
-  - release
+  - release-npm
+  - release-github
 
-publish:
-  stage: release
+# release-npm:
+#   stage: release-npm
+#   script:
+#     - echo publish to npm
+#     - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+#     - npm profile get
+#   #  - npm publish
+#   only:
+#     - web # only autorun when click “RunPipeLine” on GitLab WebSite
+#   when: 
+#       manual
+#   allow_failure: false
+
+release-github:
+  stage: release-github
   script:
-    - npm config set -- '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-    - echo $NPM_TOKEN
-    - echo $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - npm profile get
-    - echo so cool
-  #  - npm publish
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-    - if: '$CI_PIPELINE_SOURCE == "web"'
-  when: manual
-    
+    - echo $GITHUB_TOKEN
+  only:
+    - web # only autorun when click “RunPipeLine” on GitLab WebSite
+  when: 
+      manual
+  allow_failure: false
