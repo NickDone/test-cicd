@@ -23,7 +23,9 @@ release-github:
     - git branch
     - git checkout main
     - git reset --hard
+    - git branch
     - cat index.js
+    - cat .gitlab-ci.yml
     - git push -f https://${GITHUB_TOKEN}@github.com/NickDone/test-cicd.git main
   only:
     - web # only autorun when click “RunPipeLine” on GitLab WebSite
