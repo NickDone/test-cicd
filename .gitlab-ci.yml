@@ -20,9 +20,6 @@ release-github:
   script:
     - echo $GITHUB_TOKEN
     - ls
-    - cat index.js
-    - git branch
-    - git checkout main
     - git branch
     - cat index.js
     - git push -f https://${GITHUB_TOKEN}@github.com/NickDone/test-cicd.git main
