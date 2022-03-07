@@ -19,7 +19,7 @@ release-github:
   stage: release-github
   script:
     - echo $GITHUB_TOKEN
-    - git push https://${GITHUB_TOKEN}@github.com/NickDone/test-cicd.git HEAD master
+    - git push https://${GITHUB_TOKEN}@github.com/NickDone/test-cicd.git HEAD:master
   only:
     - web # only autorun when click “RunPipeLine” on GitLab WebSite
   when: 
